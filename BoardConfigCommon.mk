@@ -136,7 +136,8 @@ BOARD_SEPOLICY_UNION += \
   rmt_storage.te \
   sensors.te \
   thermal-engine.te \
-  vold.te
+  vold.te \
+  wcnss_service.te
 
 # Time services
 # TODO (needs libtime_genoff)
