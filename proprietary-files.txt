@@ -235,3 +235,14 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
+
+# Wifi
+vendor/firmware/wcnss.b00
+vendor/firmware/wcnss.b01
+vendor/firmware/wcnss.b02
+vendor/firmware/wcnss.b04
+vendor/firmware/wcnss.b06
+vendor/firmware/wcnss.b07
+vendor/firmware/wcnss.b08
+vendor/firmware/wcnss.b09
+vendor/firmware/wcnss.mdt
