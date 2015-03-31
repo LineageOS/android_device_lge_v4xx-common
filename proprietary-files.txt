@@ -174,25 +174,6 @@ vendor/lib/libmm-abl.so
 bin/mpdecision
 vendor/lib/libqc-opt.so
 
-# Sensors
-bin/irsc_util
-bin/sensors.qcom
-vendor/lib/hw/sensors.msm8226.so
-vendor/lib/libbmc050.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
-
-# Thermal daemon
-bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib/libthermalioctl.so
-
-# Time services
-# app/TimeService.apk
-# bin/time_daemon
-# vendor/lib/libTimeService.so
-vendor/lib/libtime_genoff.so
-
 # Radio
 bin/ims_rtp_daemon
 bin/netmgrd
@@ -235,3 +216,33 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
+
+# Sensors
+bin/irsc_util
+bin/sensors.qcom
+vendor/lib/hw/sensors.msm8226.so
+vendor/lib/libbmc050.so
+vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
+
+# Thermal daemon
+bin/thermal-engine
+vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
+
+# Time services
+# app/TimeService.apk
+# bin/time_daemon
+# vendor/lib/libTimeService.so
+vendor/lib/libtime_genoff.so
+
+# Wifi
+vendor/firmware/wcnss.b00
+vendor/firmware/wcnss.b01
+vendor/firmware/wcnss.b02
+vendor/firmware/wcnss.b04
+vendor/firmware/wcnss.b06
+vendor/firmware/wcnss.b07
+vendor/firmware/wcnss.b08
+vendor/firmware/wcnss.b09
+vendor/firmware/wcnss.mdt
