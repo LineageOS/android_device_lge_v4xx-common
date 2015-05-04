@@ -43,6 +43,7 @@ typedef struct _ArgEl {
    const char *szSrc;    // Source Path
    int nPathType;        // Type of Source Path
    int nDataType;        // Type of Data
+   int offset;
 } ArgEl;
 
 typedef ArgEl InArg;
@@ -86,7 +87,7 @@ int hexa_to_ascii(const unsigned char* hexa, char* ascii, int nHexLen)
     return SUCCESS;
 }
 
-int readBDAddrData(const char* szFilePath, unsigned char* addrData, int nDataLen)
+int readBDAddrData(const char* szFilePath, unsigned char* addrData, int nDataLen, int offset)
 {
     int nFd, nRdCnt;
 
@@ -96,6 +97,8 @@ int readBDAddrData(const char* szFilePath, unsigned char* addrData, int nDataLen
         ALOGW("There is no Address File in FTM area : %s\n", szFilePath);
         return FAIL;
     }
+
+    lseek(nFd, offset, SEEK_SET);
 
     nRdCnt = read(nFd, addrData, nDataLen);
     if (nRdCnt != nDataLen) {
@@ -126,19 +129,19 @@ int readBDAddr(InArg inArg, LoadedBDAddr *loadedBDAddr)
     unsigned char addrData[BD_ADDR_LEN] = {0,};
     int nDataLen = 0;
 
-    ALOGI("Read From %s by Path type(0x%2x), Data type (0x%2x)",
-            inArg.szSrc, inArg.nPathType, inArg.nDataType);
+    ALOGI("Read From %s by Path type(0x%2x), Data type (0x%2x), Offset (0x%2x)",
+            inArg.szSrc, inArg.nPathType, inArg.nDataType, inArg.offset);
 
     if (inArg.nPathType == ARG_TYPE_PATH_FILE) {
         switch (inArg.nDataType) {
         case ARG_TYPE_DATA_HEX:
-            if (!readBDAddrData(inArg.szSrc, loadedBDAddr->data.bin, BD_ADDR_LEN)) {
+            if (!readBDAddrData(inArg.szSrc, loadedBDAddr->data.bin, BD_ADDR_LEN, inArg.offset)) {
                 loadedBDAddr->nDataType = ARG_TYPE_DATA_HEX;
                 return SUCCESS;
             }
             break;
         case ARG_TYPE_DATA_ASCII:
-           if (!readBDAddrData(inArg.szSrc, (unsigned char *)loadedBDAddr->data.sz, BD_ADDR_STR_LEN)) {
+           if (!readBDAddrData(inArg.szSrc, (unsigned char *)loadedBDAddr->data.sz, BD_ADDR_STR_LEN, inArg.offset)) {
                 loadedBDAddr->nDataType = ARG_TYPE_DATA_ASCII;
                 return SUCCESS;
             }
@@ -230,8 +233,10 @@ int main(int argc, char *argv[])
     memset(&outArg, 0, sizeof(OutArg));
     memset(&loadedBDAddr, 0, sizeof(LoadedBDAddr));
 
+    inArg.offset = 0;
+
     //load args;
-    while((c=getopt(argc, argv, ":f:p:hsx")) != -1){
+    while((c=getopt(argc, argv, ":f:p:o:hsx")) != -1){
         switch(c){
         case 'f': // input path
             if (optarg != NULL) {
@@ -254,6 +259,14 @@ int main(int argc, char *argv[])
         case 'h': // data type to be read is hex
             ALOGI("option : h");
             inArg.nDataType = ARG_TYPE_DATA_HEX;
+            break;
+        case 'o': // offset to read at
+            if (optarg != NULL) {
+                ALOGI("option : o=%s", optarg);
+                inArg.offset = atoi(optarg);
+            } else {
+                ALOGW("Invalid Argument(%s) of offset", optarg);
+            }
             break;
         case 's': // data type to be read is ascii
             ALOGI("option : s");
