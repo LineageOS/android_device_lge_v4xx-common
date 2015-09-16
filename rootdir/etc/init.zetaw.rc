@@ -65,6 +65,9 @@ on init
 on post-fs
    export LD_PRELOAD /vendor/lib/libNimsWrap.so
 
+    # BFQ
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+
 on chargerlogo
    stop bootlogo
    start charger
