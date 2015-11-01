@@ -186,11 +186,6 @@ vendor/lib/libbmc050.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 
-# Thermal daemon
-bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib/libthermalioctl.so
-
 # Time services
 # app/TimeService.apk
 # bin/time_daemon

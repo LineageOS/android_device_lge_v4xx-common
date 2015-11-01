@@ -219,8 +219,11 @@ PRODUCT_PACKAGES += \
     liblge
 
 # Thermal
+PRODUCT_PACKAGES += \
+    thermanager
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
+    $(LOCAL_PATH)/configs/thermanager.xml:system/etc/thermanager.xml
 
 # USB
 PRODUCT_PACKAGES += \
