@@ -127,10 +127,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/lge/v4xx-common/sepolicy
 
-# Time services
-# TODO (needs libtime_genoff)
-# BOARD_USES_QC_TIME_SERVICES := true
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
