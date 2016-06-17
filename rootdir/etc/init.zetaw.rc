@@ -763,6 +763,7 @@ service hcidump /system/bin/sh /system/etc/hcidump.sh
 
 service charger /sbin/charger_v4xx
     class charger
+    seclabel u:r:healthd:s0
 
 # Mobile DM Router
 service lg_dm_router /system/bin/lg_dm_router

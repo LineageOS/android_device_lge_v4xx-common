@@ -1,0 +1,4 @@
+allow healthd device:dir { open read };
+allow healthd rtc_device:chr_file write;
+allow healthd sysfs_battery_supply:file write;
+allow healthd sysfs_usb_supply:file write;
