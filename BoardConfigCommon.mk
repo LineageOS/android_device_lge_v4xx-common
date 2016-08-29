@@ -53,22 +53,22 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
-COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND=' \
-    { "persist.data.sensor_name", AID_CAMERA, 0 }, \
-    { "camera.4k2k.enable", AID_MEDIA, 0 }, \
-    { "persist.data.rear.minfps", AID_MEDIA, 0 }, \
-    { "persist.data.front.minfps", AID_MEDIA, 0 }, \
-    { "persist.data.rear.minfps", AID_MEDIA, 0 }, \
-    '
+#COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+#COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE
+#COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND=' \
+#    { "persist.data.sensor_name", AID_CAMERA, 0 }, \
+#    { "camera.4k2k.enable", AID_MEDIA, 0 }, \
+#    { "persist.data.rear.minfps", AID_MEDIA, 0 }, \
+#    { "persist.data.front.minfps", AID_MEDIA, 0 }, \
+#    { "persist.data.rear.minfps", AID_MEDIA, 0 }, \
+#    '
 
 # CMHW
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
@@ -127,8 +127,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/lge/v4xx-common/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/lge/v4xx-common/sepolicy
 
 # Time services
 # TODO (needs libtime_genoff)
