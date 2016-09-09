@@ -189,7 +189,12 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig
+    libcnefeatureconfig \
+    librmnetctl
+
+# Radio
+PRODUCT_PACKAGES += \
+    libxml2
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -205,10 +210,6 @@ PRODUCT_PACKAGES += \
     init.zetaw.usb.rc \
     init.zetaw.usb.sh \
     ueventd.e7.rc
-
-# RIL symbols
-PRODUCT_PACKAGES += \
-    liblge
 
 # Thermal
 PRODUCT_COPY_FILES += \
