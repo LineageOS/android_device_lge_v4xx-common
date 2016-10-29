@@ -77,3 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
+
+# Bluetooth properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=smd
