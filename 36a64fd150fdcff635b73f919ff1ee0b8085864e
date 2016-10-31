@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff2e2bb8_813411fd",
+        "filename": "system_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-10-31T12:09:14Z",
+      "side": 1,
+      "message": "Nitpicking, but please move above \u0027CNE\u0027 (line 28) so its alphabetized.",
+      "revId": "36a64fd150fdcff635b73f919ff1ee0b8085864e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
