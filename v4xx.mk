@@ -111,7 +111,11 @@ PRODUCT_PACKAGES += \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
     memtrack.msm8226 \
-    liboverlay
+    liboverlay	
+
+# DRM
+PRODUCT_PACKAGES += \
+    libshims_wvm
 
 # Gello
 PRODUCT_PACKAGES += \
