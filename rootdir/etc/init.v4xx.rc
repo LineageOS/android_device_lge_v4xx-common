@@ -16,13 +16,13 @@ on early-init
 on init
 
 on fs
-    mount_all fstab.e7
+    mount_all fstab.v4xx
     restorecon_recursive /sns
     restorecon_recursive /persist
     restorecon_recursive /persist-lg
 
     # Enable zRAM
-    swapon_all /fstab.e7
+    swapon_all /fstab.v4xx
 
     # In order to keep plenty of large order chunks.
     write /proc/sys/vm/min_free_kbytes 5120
@@ -41,7 +41,6 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on early-boot
-    start timekeep
 
 on boot
    chown media media /sys/bus/platform/devices/cam_sensor_vt/antibanding
@@ -95,12 +94,10 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
-service timekeep /system/bin/timekeep restore
+service time_daemon /system/bin/time_daemon
+   class late_start
    user root
    group root
-   disabled
-   oneshot
-   seclabel u:r:timekeep:s0
 
 service mpdecision /system/bin/mpdecision --avg_comp
    class late_start
