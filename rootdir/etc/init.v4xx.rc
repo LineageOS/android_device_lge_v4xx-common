@@ -98,11 +98,6 @@ service timekeep /system/bin/timekeep restore
    oneshot
    seclabel u:r:timekeep:s0
 
-service mpdecision /system/bin/mpdecision --avg_comp
-   class late_start
-   user root
-   group system
-
 service thermal-engine /system/bin/thermal-engine
    class main
    user root
