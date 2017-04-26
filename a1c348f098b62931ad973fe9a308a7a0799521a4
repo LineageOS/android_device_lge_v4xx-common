@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_725e86eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2017-04-26T20:44:23Z",
+      "side": 1,
+      "message": "don\u0027t do this, otherwise every time this gets committed i\u0027ll get a github notification, its super annoying",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "a1c348f098b62931ad973fe9a308a7a0799521a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
