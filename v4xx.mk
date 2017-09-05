@@ -254,8 +254,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
+
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    sensors.msm8226
 
 # USB HIDL interfaces
 PRODUCT_PACKAGES += \
