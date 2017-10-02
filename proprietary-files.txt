@@ -1,6 +1,6 @@
 # Audio
-bin/adsprpcd
-bin/fm_qsoc_patches
+bin/adsprpcd:vendor/bin/adsprpcd
+bin/fm_qsoc_patches:vendor/bin/fm_qsoc_patches
 etc/ACDB/Bluetooth_cal.acdb
 etc/ACDB/General_cal.acdb
 etc/ACDB/Global_cal.acdb
@@ -28,7 +28,7 @@ vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 
 # Camera
-bin/mm-qcamera-daemon
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 etc/firmware/cpp_firmware_v1_2_0.fw
 lib/libchromatix_hi543_common.so
 lib/libchromatix_hi543_default_video.so
@@ -93,7 +93,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # DRM
-bin/qseecomd
+bin/qseecomd:vendor/bin/qseecomd
 lib/drm/libfwdlockengine.so
 lib/libdrmfs.so
 lib/libdrmtime.so
@@ -156,7 +156,7 @@ vendor/lib/libsc-a3xx.so
 vendor/lib/libuiblur.so
 
 # IRDA
-bin/irrcServer
+bin/irrcServer:vendor/bin/irrcServer
 lib/libirrc.so
 lib/libirrcClient.so
 lib/libirrcJni.so
@@ -166,12 +166,12 @@ lib/liblgewg.so
 vendor/lib/libmmipstreamaal.so
 
 # Perf
-bin/mpdecision
+bin/mpdecision:vendor/bin/mpdecision
 vendor/lib/libqc-opt.so
 
 # Sensors
-bin/irsc_util
-bin/sensors.qcom
+bin/irsc_util:vendor/bin/irsc_util
+bin/sensors.qcom:vendor/bin/sensors.qcom
 vendor/lib/hw/sensors.msm8226.so
 vendor/lib/libbmc050.so
 vendor/lib/libsensor1.so
@@ -181,12 +181,12 @@ vendor/lib/libsensor_reg.so
 vendor/lib/libtime_genoff.so
 
 # Radio
-bin/ims_rtp_daemon
-bin/netmgrd
-bin/qmiproxy
-bin/qmuxd
-bin/radish
-bin/rmt_storage
+bin/ims_rtp_daemon:vendor/bin/ims_rtp_daemon
+bin/netmgrd:vendor/bin/netmgrd
+bin/qmiproxy:vendor/bin/qmiproxy
+bin/qmuxd:vendor/bin/qmuxd
+bin/radish:vendor/bin/radish
+bin/rmt_storage:vendor/bin/rmt_storage
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 lib/libmdmdetect.so
